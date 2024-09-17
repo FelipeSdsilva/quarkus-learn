@@ -12,8 +12,8 @@ import java.util.Set;
 @MongoEntity
 public class User extends PanacheMongoEntity {
 
-    private String firstName;
-    private String lastName;
+    private ObjectId id;
+    private String fullName;
     private LocalDate birthday;
 
 
@@ -25,9 +25,9 @@ public class User extends PanacheMongoEntity {
     public User() {
     }
 
-    public User(String firstName, String lastName, LocalDate birthday, String email, String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public User(ObjectId id, String fullName, LocalDate birthday, String email, String password) {
+        this.id = id;
+        this.fullName = fullName;
         this.birthday = birthday;
         this.email = email;
         this.password = password;
@@ -41,20 +41,12 @@ public class User extends PanacheMongoEntity {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public LocalDate getBirthday() {

@@ -1,27 +1,44 @@
 package org.soulsheart.dto;
 
-import org.bson.types.ObjectId;
 import org.soulsheart.entities.Publication;
+import org.soulsheart.entities.User;
 
 public class PublicationDTO {
 
+    private String id;
     private String title;
     private String content;
-    private ObjectId userId;
+    private UserDTO user;
 
     public PublicationDTO() {
     }
 
-    public PublicationDTO(String title, String content, ObjectId userId) {
+    public PublicationDTO(String id, String title, String content, UserDTO user) {
+        this.id = id;
         this.title = title;
         this.content = content;
-        this.userId = userId;
+        this.user = user;
+    }
+
+    public PublicationDTO(Publication publication, User user) {
+        id = publication.getId().toString();
+        title = publication.getTitle();
+        content = publication.getContent();
+        this.user = new UserDTO(user);
     }
 
     public PublicationDTO(Publication publication) {
-        this.title = title;
-        this.content = content;
-        this.userId = userId;
+        id = publication.getId().toString();
+        title = publication.getTitle();
+        content = publication.getContent();
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -40,11 +57,11 @@ public class PublicationDTO {
         this.content = content;
     }
 
-    public ObjectId getUserId() {
-        return userId;
+    public UserDTO getUser() {
+        return user;
     }
 
-    public void setUserId(ObjectId userId) {
-        this.userId = userId;
+    public void setUser(UserDTO user) {
+        this.user = user;
     }
 }

@@ -35,7 +35,7 @@ public class UserController {
     @POST
     public Response postNewUser(UserRequest request) {
         UserDTO userDTO = userService.insertNewUser(request);
-        return Response.created(URI.create("/customers/" + userDTO.getId())).entity(userDTO).build();
+        return Response.created(URI.create("/users/" + userDTO.getId())).entity(userDTO).build();
     }
 
     @PUT

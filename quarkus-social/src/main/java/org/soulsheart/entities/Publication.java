@@ -11,7 +11,8 @@ public class Publication extends PanacheMongoEntity {
     private String content;
     private ObjectId userId;
 
-    public Publication() {}
+    public Publication() {
+    }
 
     public Publication(String title, String content, ObjectId userId) {
         this.title = title;
@@ -19,6 +20,13 @@ public class Publication extends PanacheMongoEntity {
         this.userId = userId;
     }
 
+    public ObjectId getId() {
+        return id;
+    }
+
+    public void setId(ObjectId id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;

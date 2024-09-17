@@ -8,24 +8,21 @@ import java.time.LocalDate;
 public class UserDTO {
 
     private ObjectId id;
-    private String firstName;
-    private String lastName;
+    private String fullName;
     private LocalDate birthday;
 
     public UserDTO() {
     }
 
-    public UserDTO(ObjectId id, String firstName, String lastName, LocalDate birthday) {
+    public UserDTO(ObjectId id, String fullName, LocalDate birthday) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.fullName = fullName;
         this.birthday = birthday;
     }
 
     public UserDTO(User user) {
         id = user.getId();
-        firstName = user.getFirstName();
-        lastName = user.getLastName();
+        fullName = user.getFullName();
         birthday = user.getBirthday();
     }
 
@@ -37,20 +34,12 @@ public class UserDTO {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public LocalDate getBirthday() {

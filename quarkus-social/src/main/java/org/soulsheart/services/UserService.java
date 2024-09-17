@@ -49,8 +49,7 @@ public class UserService {
     }
 
     private void converterDtoInEntity(UserRequest request, User user) {
-        user.setFirstName(request.fistName());
-        user.setLastName(request.lastName());
+        user.setFullName(request.fullName());
         user.setBirthday(request.birthDate());
         user.setEmail(request.email());
         user.setPassword(request.password());
